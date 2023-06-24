@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3c2bb699.css",
+    "main.js": "/static/js/main.a33676f2.js",
+    "static/media/menu_button.svg": "/static/media/menu_button.fe6910ea066a4b9ec974cc13fa588b4c.svg",
+    "static/media/jingsi.jpg": "/static/media/jingsi.7ab81923bf0719239c73.jpg",
+    "index.html": "/index.html",
+    "main.3c2bb699.css.map": "/static/css/main.3c2bb699.css.map",
+    "main.a33676f2.js.map": "/static/js/main.a33676f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c2bb699.css",
+    "static/js/main.a33676f2.js"
+  ]
+}
