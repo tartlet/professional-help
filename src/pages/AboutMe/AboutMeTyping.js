@@ -12,7 +12,7 @@ const TypingComponent = ({ onAnimationComplete }) => {
           typeItInstance.destroy(true);
           onAnimationComplete();
         },
-        speed: 0,
+        speed: 50,
         cursor: true,
         breakLines: false,
         loop: false,
@@ -22,24 +22,8 @@ const TypingComponent = ({ onAnimationComplete }) => {
         .type('<br>')
         .type('<br>')
         .pause(800)
-        .type('My name is meow!')
-        .pause(2000)
-        .delete(1)
-        .pause(500)
-        .delete(1)
-        .pause(700)
-        .delete(1)
-        .pause(400)
-        .delete(1)
-        .pause(700)
-        .type('.')
+        .type('My name is Jinni!')
         .pause(800)
-        .type('.')
-        .pause(200)
-        .type('.')
-        .pause(1000)
-        .type(":3")
-        .pause(2000)
         .delete(53)
         .pause(1000)
         .go();

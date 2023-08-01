@@ -5,7 +5,8 @@ module.exports = {
     colors: {
       'barpink': '#ffbcbc',
       'searchpink': '#ffecec',
-      'pinkycandy': '#ffeade'
+      'pinkycandy': '#ffeade',
+      'white': '#ffffff'
     },
     extend: {},
   },
