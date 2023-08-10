@@ -1,15 +1,16 @@
 import parse from 'html-react-parser';
 
-const BlogPost = ({title, body, date}) => {
+const BlogPost = ({post}) => {
 
 	return (
 		<div className="mx-auto h-52 border-2 rounded overflow-auto">
 			<div className="font-mono text-lg">
-				{title}
+				{post.title}
 			</div>
 			<br/>
 			<div className="overflow-hidden">
-				{parse(body)}
+				<img src={post.author.photo.url} alt="dummy"/>
+				{post.preview}
 			</div>
 		</div>
 	);
