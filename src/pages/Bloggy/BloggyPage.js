@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'; // Import useEffect
-import BlogPost from './BlogPost';
-import getPosts from './BlogFunctions';
+import BlogPostCard from './BlogPostCard';
+import { getPosts } from './BlogFunctions';
 
 const BloggyPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -38,7 +38,7 @@ const BloggyPage = () => {
         <div>
           {postData.map((post, index) => (
             <div className="p-4">
-              <BlogPost 
+              <BlogPostCard 
               post={post.node}/>
             </div>
           ))}
