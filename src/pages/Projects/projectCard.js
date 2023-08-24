@@ -26,7 +26,7 @@ const ProjectCard = ({ index, project, onClick }) => {
 
   return (
     <div
-      className={`max-w-sm h-full rounded shadow-lg ${
+      className={`max-w-sm h-full rounded overflow-hidden shadow-lg ${
         isImageLoaded ? "animate-fade-in" : "opacity-0" // Apply fade-in animation class
       }`}
     >
@@ -34,13 +34,13 @@ const ProjectCard = ({ index, project, onClick }) => {
         <>
           <div className={`container w-200 ${isImageLoaded ? "opacity-100" : "opacity-0"}`}>
             <img
-              className="w-full rounded-t"
+              className="w-full"
               src={catImage}
               alt="Sunset in the mountains"
               onLoad={handleImageLoad} // Call handleImageLoad when the image is loaded
             />
           </div>
-          <div className={`mx-2 py-4 ${isImageLoaded ? "opacity-100" : "opacity-0"}`}>
+          <div className={`mx-2 py-4 h-[200px] ${isImageLoaded ? "opacity-100" : "opacity-0"}`}>
             <div className="font-bold text-lg mb-2">{project.title}</div>
             <div className="flex flex-row items-center justify-left text-[10px] text-darktext font-bold mb-2">
               {(project.categories).map((category,index) => (
@@ -49,10 +49,10 @@ const ProjectCard = ({ index, project, onClick }) => {
                 </div>
               ))}
             </div>
-            <p className="text-sm h-[58px] overflow-auto">{project.blurb}</p>
+            <p className="text-sm h-[40%] overflow-auto">{project.blurb}</p>
           </div>
           <button 
-						className={`bg-searchpink hover:bg-barpink space-x-2 font-bold m-2 py-2 px-4 rounded border-[1px] inline-flex items-center ${isImageLoaded ? "opacity-100" : "opacity-0"}`} 
+						className={`bg-searchpink hover:bg-barpink relative space-x-2 font-bold m-2 py-2 px-4 rounded border-[1px] inline-flex items-center ${isImageLoaded ? "opacity-100" : "opacity-0"}`} 
 						onClick={onClick}>
             <MoreIcon />
             <span>More!</span>

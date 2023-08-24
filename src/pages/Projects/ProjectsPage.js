@@ -35,9 +35,9 @@ const ProjectsPage = () => {
   return (
     <div> 
       {isLoaded ? (
-      <div className="grid items-stretch grid-cols-3 gap show-card font-mono">
+      <div className="grid items-stretch grid-cols-3 show-card font-mono">
       {projectData.map((project, index) => (
-        <div className="p-4" key={index+1}>
+        <div className="p-2" key={index+1}>
           <ProjectCard
             index={index}
             project= {project.node}

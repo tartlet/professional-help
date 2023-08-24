@@ -1,7 +1,9 @@
 const NotFound = () => {
     return (
         <div>
-            NOT FOUND
+            <div className="">
+                404 art here
+            </div>
         </div>
     );
 };

@@ -64,6 +64,7 @@ export const getPostDetail = async slug => {
               slug
             }
           }
+          categoryName
         }
         content {
           html
