@@ -44,7 +44,10 @@ const BloggyPage = () => {
           ))}
         </div>
       ) : (
-        <p>Loading...</p>
+        <div className='object-center'>
+        <img src="https://cdn.dribbble.com/users/2882885/screenshots/7861928/media/a4c4da396c3da907e7ed9dd0b55e5031.gif" className='mt-4'/>
+        <p className='text-2xl text-center mt-6'>Loading...</p>
+        </div>
       )}
     </div>
   );

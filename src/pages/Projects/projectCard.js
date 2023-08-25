@@ -17,6 +17,7 @@ const ProjectCard = ({ index, project, onClick }) => {
       })
       .catch((error) => {
         console.error("Error fetching cat image:", error);
+        setCatImage("./meow.jpeg")
       });
   }, []);
 
