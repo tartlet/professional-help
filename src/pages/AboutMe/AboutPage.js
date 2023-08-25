@@ -90,13 +90,13 @@ return (
 		<div className={`fade-in-image ${expandLeftDiv ? 'show' : ''}`}>
 			<img src={myProfilePicture} className="pt-6 pl-4 rounded-full"/>
 		</div>
-		<div className="pr-10">
+		<div className="pr-10 basis-2/3">
 					{!typingComplete && <TypingComponent onAnimationComplete={handleAnimationComplete} />}
 					<div className={`fade-in-text ${line1Complete ? 'show' : ''}`}>
-						<div className="font-mono text-xl pt-10 pl-6">Meow.</div>
+						<div className="font-mono text-xl pt-10 pl-6">UT Austin, B.S. Mechanical Engineering & Minor in Computer Science.</div>
 					</div>
 					<div className={`fade-in-text ${line2Complete ? 'show' : ''}`}>
-						<div className="font-mono text-xl pt-10 pl-6">Meow.</div>
+						<div className="font-mono text-xl pt-10 pl-6">Thinker, maker,.</div>
 					</div>
 					<div className={`fade-in-text ${line3Complete ? 'show' : ''}`}>
 						<div className="font-mono text-xl pt-10 pl-6">Meow.</div>

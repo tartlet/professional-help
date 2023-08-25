@@ -13,7 +13,7 @@ const BlogPostCard = ({post}) => {
 
 	return (
 		<Link to="/blog/${post.slug}" state={{slug: post.slug}}>
-		<div className="font-mono mx-auto border-borderpink border-2 mb-10 rounded-lg shadow-md hover:shadow-xl">
+		<div className="font-mono mx-auto border-borderpink border-2 mb-2 rounded-lg shadow-md hover:shadow-xl">
 			<div className="font-semibold text-xl mt-2 ml-2 mb-4">
 				{post.title}
 			</div>
@@ -24,7 +24,7 @@ const BlogPostCard = ({post}) => {
 				{post.preview}
 			</div>
 			<div className='flex'>
-				<div className="w-1/2 px-4 text-sm shadow-sm ml-4 mb-4 rounded-lg">
+				<div className="w-1/2 px-4 text- shadow-sm ml-4 mb-4 rounded-lg">
 					<div className='flex'>
 						<div>
 							<img src={post.author.photo.url} alt="dummy" className="object-center w-12 h-12 rounded-full object-cover"/>

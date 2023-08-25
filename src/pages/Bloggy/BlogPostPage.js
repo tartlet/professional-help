@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { getPostDetail } from "./BlogFunctions";
 import { useState, useEffect } from "react";
 import parse from 'html-react-parser';
+import { Link } from "react-router-dom";
 
 const BlogPostPage = () => {
   const [postDetail, setPostDetail] = useState([]);
@@ -21,7 +22,7 @@ const BlogPostPage = () => {
     }
     fetchPostDetail()
       .catch(console.log("error getting Post Detail"));
-  }, [])
+  }, [isLoaded, post_slug])
 
   return (
     <div>
@@ -60,23 +61,29 @@ const BlogPostPage = () => {
                 {parse(postDetail.content.html)}
               </div>
             </div>
-            <div className="basis-1/3 border-borderpink border-[1px] rounded-lg mr-10 h-80">
+            <div className="basis-1/3 flex flex-col border-borderpink border-[1px] rounded-lg mr-10 h-[320px]">
               <div className="m-2 text-center">
                 Other Posts Within the Same Category
               </div>
-              {/* <div>
+              <div className="overflow-auto">
                 {postDetail.categories.map((category) => {
                   return (
-                    {category.posts.map((post, index) => {
-                      return (
-                        <div>
-                          {post.author}
-                        </div>
-                      );
-                    })}
+                    <div>
+                      {category.posts.map((post, index) => {
+                        if ((post.slug) !== post_slug) {
+                        return (
+                          <Link to="/blog/${post.slug}" state={{slug: post.slug}}>
+                          <div className="text-sm m-2 border-[1px] hover:drop-shadow-md hover:bg-searchpink border-borderpink rounded-lg p-2">
+                            {post.title}
+                          </div>
+                          </Link>
+                        );
+                      }
+                      })}
+                    </div>
                   );
                 })}
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
