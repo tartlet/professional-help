@@ -3,7 +3,7 @@ import { ReactComponent as MoreIcon } from './../../assets/catarrow.svg';
 import useFadeIn from "./useFadeIn";
 import "./projectspage.css"
 
-const ProjectCard = ({ index, title, description, onClick }) => {
+const ProjectCard = ({ index, project, onClick }) => {
   const [catImage, setCatImage] = useState("");
   const isImageLoaded = useFadeIn(); // Control the fade-in animation with useFadeIn hook
   const [isImageLoadedState, setIsImageLoaded] = useState(false); // State to track image loading
@@ -17,6 +17,7 @@ const ProjectCard = ({ index, title, description, onClick }) => {
       })
       .catch((error) => {
         console.error("Error fetching cat image:", error);
+        setCatImage("./meow.jpeg")
       });
   }, []);
 
@@ -26,7 +27,7 @@ const ProjectCard = ({ index, title, description, onClick }) => {
 
   return (
     <div
-      className={`max-w-sm rounded overflow-hidden shadow-lg ${
+      className={`max-w-sm h-full rounded overflow-hidden shadow-lg ${
         isImageLoaded ? "animate-fade-in" : "opacity-0" // Apply fade-in animation class
       }`}
     >
@@ -40,12 +41,19 @@ const ProjectCard = ({ index, title, description, onClick }) => {
               onLoad={handleImageLoad} // Call handleImageLoad when the image is loaded
             />
           </div>
-          <div className={`px-6 py-4 ${isImageLoaded ? "opacity-100" : "opacity-0"}`}>
-            <div className="font-bold text-xl mb-2">{title}</div>
-            <p className="text-gray-700 text-base">{description}</p>
+          <div className={`mx-2 py-4 h-[200px] ${isImageLoaded ? "opacity-100" : "opacity-0"}`}>
+            <div className="font-bold text-lg mb-2">{project.title}</div>
+            <div className="flex flex-row items-center justify-left text-[10px] text-darktext font-bold mb-2">
+              {(project.categories).map((category,index) => (
+                <div className="rounded-full py-[2px] px-[2px] mx-[2px] border-[2px] border-borderpink bg-searchpink">
+                  {category.name}
+                </div>
+              ))}
+            </div>
+            <p className="text-sm h-[40%] overflow-auto">{project.blurb}</p>
           </div>
           <button 
-						className={`bg-searchpink hover:bg-barpink space-x-2 font-bold m-2 py-2 px-4 rounded border-[1px] inline-flex items-center ${isImageLoaded ? "opacity-100" : "opacity-0"}`} 
+						className={`bg-searchpink hover:bg-barpink relative space-x-2 font-bold m-2 py-2 px-4 rounded border-[1px] inline-flex items-center ${isImageLoaded ? "opacity-100" : "opacity-0"}`} 
 						onClick={onClick}>
             <MoreIcon />
             <span>More!</span>

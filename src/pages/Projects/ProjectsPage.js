@@ -1,16 +1,27 @@
 import './projectspage.css';
 import ProjectCard from './projectCard';
-import projectData from './projectData.json';
-import { useState } from 'react';
+// import projectData from './projectData.json';
+import { useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
+import { getProjects } from './GetProjects';
+import parse from 'html-react-parser';
 
 const ProjectsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState({
-    "id": 0,
-    "title": "DUMMY THICC",
-    "description": "sheeeeyet that's a dummy thicc cat we got here"
-  });
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [projectData, setProjectData] = useState([]);
+  const [selectedCard, setSelectedCard] = useState(null);
+
+  useEffect(() => {
+    const getProjectList = async() => {
+      const projects = await getProjects();
+      setProjectData(projects);
+      setSelectedCard(projects[0].node);
+      setIsLoaded(true);
+    }
+    getProjectList()
+      .catch(console.log("error getting Post Detail"));
+  }, [])
 
   function openModal() {
     setIsOpen(true);
@@ -22,17 +33,18 @@ const ProjectsPage = () => {
 
 
   return (
-    <div className="grid grid-cols-3 gap show-card font-mono">
+    <div> 
+      {isLoaded ? (
+      <div className="grid items-stretch grid-cols-3 show-card font-mono">
       {projectData.map((project, index) => (
-        <div className="p-4" key={project.id}>
+        <div className="p-2" key={index+1}>
           <ProjectCard
             index={index}
-            title={project.title}
-            description={project.description}
-            onClick={() => {setSelectedCard(project);
-                            console.log(project.id);
+            project= {project.node}
+            onClick={() => {setSelectedCard(project.node);
+                            console.log(index +1);
                             openModal();}}
-            initialDelay={index * 100} // Add a delay based on the index of the card
+            initialDelay={(index+1) * 100} // Add a delay based on the index of the card
           />
         </div>
       ))}
@@ -41,12 +53,18 @@ const ProjectsPage = () => {
           isOpen={isOpen} 
           onRequestClose={handleRequestCloseFunction}>
             <div className="font-mono">
-              <p className="text-base">{selectedCard.title}</p>
-              <p className="text-xs">{selectedCard.content}</p>
+              <p className="text-xl">{selectedCard.title}</p>
+              <br />
+              <p className="text-base">{parse(selectedCard.projectDescription.html)}</p>
             </div>
         </ReactModal>
       </div>
     </div>
+    ) : (
+      <p>LOADING</p>
+    )}
+    </div>
+
   );
 };
 

@@ -17,12 +17,24 @@ const AboutPage = () => {
   const handleAnimationComplete = () => {
     console.log('TypeIt animation completed!');
     setTypingComplete(true);
+    window.localStorage.setItem('typingComplete', true);
   };
+
+  useEffect(() => {
+    setTypingComplete(JSON.parse(window.localStorage.getItem('typingComplete')));
+    setLine1Complete(JSON.parse(window.localStorage.getItem('line1Complete')));
+    setLine2Complete(JSON.parse(window.localStorage.getItem('line2Complete')));
+    setLine3Complete(JSON.parse(window.localStorage.getItem('line3Complete')));
+    setLine4Complete(JSON.parse(window.localStorage.getItem('line4Complete')));
+    setShowNewText(JSON.parse(window.localStorage.getItem('showNewText')));
+    setExpandLeftDiv(JSON.parse(window.localStorage.getItem('expandLeftDiv')));
+  }, [])
 
   useEffect(() => {
     if (typingComplete) {
       setTimeout(() => {
         setLine1Complete(true);
+        window.localStorage.setItem('line1Complete', true);
       }, 800); // Delay before fading in the first line
     }
   }, [typingComplete]);
@@ -31,6 +43,7 @@ const AboutPage = () => {
     if (line1Complete) {
       setTimeout(() => {
         setLine2Complete(true);
+        window.localStorage.setItem('line2Complete', true);
       }, 700); // Delay before fading in the second line
     }
   }, [line1Complete]);
@@ -39,6 +52,7 @@ const AboutPage = () => {
     if (line2Complete) {
       setTimeout(() => {
         setLine3Complete(true);
+        window.localStorage.setItem('line3Complete', true);
       }, 700); // Delay before fading in the third line
     }
   }, [line2Complete]);
@@ -47,6 +61,7 @@ const AboutPage = () => {
     if (line3Complete) {
       setTimeout(() => {
         setLine4Complete(true);
+        window.localStorage.setItem('line4Complete', true);
       }, 700); // Delay before fading in fourth line
     }
   }, [line3Complete]);
@@ -55,6 +70,7 @@ const AboutPage = () => {
     if (line4Complete) {
       setTimeout(() => {
         setShowNewText(true);
+        window.localStorage.setItem('showNewText', true);
       }, 1000); // Delay before fading in resume text
     }
   }, [line4Complete]);
@@ -63,6 +79,7 @@ const AboutPage = () => {
     if (showNewText) {
       setTimeout(() => {
         setExpandLeftDiv(true);
+        window.localStorage.setItem('expandLeftDiv', true);
 				console.log("slid");
       }, 1000); // Delay before sliding
     }
@@ -73,19 +90,20 @@ return (
 		<div className={`fade-in-image ${expandLeftDiv ? 'show' : ''}`}>
 			<img src={myProfilePicture} className="pt-6 pl-4 rounded-full"/>
 		</div>
-		<div className="pr-10">
+		<div className="pr-10 basis-2/3">
 					{!typingComplete && <TypingComponent onAnimationComplete={handleAnimationComplete} />}
 					<div className={`fade-in-text ${line1Complete ? 'show' : ''}`}>
-						<div className="font-mono text-xl pt-10 pl-6">Meow.</div>
+						<div className="font-mono text-xl pt-10 pl-6">UT Austin, B.S. Mechanical Engineering & Minor in Computer Science.</div>
 					</div>
 					<div className={`fade-in-text ${line2Complete ? 'show' : ''}`}>
-						<div className="font-mono text-xl pt-10 pl-6">Meow.</div>
+						<div className="font-mono text-xl pt-10 pl-6">Artist + maker + explorer + climber.</div>
 					</div>
 					<div className={`fade-in-text ${line3Complete ? 'show' : ''}`}>
-						<div className="font-mono text-xl pt-10 pl-6">Meow.</div>
+						<div className="font-mono text-xl pt-10 pl-6">How I start my day: 3 shots of espresso, some milk, and some tears (of unspecified emotion).</div>
 					</div>
 					<div className={`fade-in-text ${line4Complete ? 'show' : ''}`}>
-						<div className="font-mono text-xl pt-10 pl-6">Meow</div>
+						<div className="font-mono text-xl pt-10 pl-6">Please do not ask me to CAD or code anything stupid, because I
+              <span className='italic'> will </span> do it. Wrong requests only.</div>
 					</div>
 					<div className={`fade-in-text ${showNewText ? 'show' : ''}`}>
 						<div className="font-mono text-base left pt-10 pl-6">My Resume:</div>
