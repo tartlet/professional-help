@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="font-mono p-5 flex flex-row bg-barpink">
-        <div className="basis-1/3 flex space-x-4">
+        <div className="basis-1/3 flex space-x-4 mr-8">
           <div>
             <MenuButton width="20" height="20"/>
           </div>
@@ -13,7 +13,7 @@ const Navbar = () => {
             <Link to="/home">The Bakery</Link>
           </div>
         </div>
-      <div className="flex flex-row xs:flex-row gap-8 items-center">
+      <div className="flex basis-2/3 flex-nowrap space-x-6 items-center text-base md:text-md">
         <Link to="/aboutme">About Me</Link>
         <Link to="/projects">Projects</Link>
         <Link to="/blog">My Blog</Link>

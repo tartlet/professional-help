@@ -93,20 +93,20 @@ return (
 		<div className="pr-10 basis-2/3">
 					{!typingComplete && <TypingComponent onAnimationComplete={handleAnimationComplete} />}
 					<div className={`fade-in-text ${line1Complete ? 'show' : ''}`}>
-						<div className="font-mono text-xl pt-10 pl-6">UT Austin, B.S. Mechanical Engineering & Minor in Computer Science.</div>
+						<div className="font-mono pt-10 pl-6 text-md md:text-lg">UT Austin, B.S. Mechanical Engineering & Minor in Computer Science.</div>
 					</div>
 					<div className={`fade-in-text ${line2Complete ? 'show' : ''}`}>
-						<div className="font-mono text-xl pt-10 pl-6">Artist + maker + explorer + climber.</div>
+						<div className="font-mono pt-10 pl-6 text-md md:text-lg">Artist + maker + explorer + climber.</div>
 					</div>
 					<div className={`fade-in-text ${line3Complete ? 'show' : ''}`}>
-						<div className="font-mono text-xl pt-10 pl-6">How I start my day: 3 shots of espresso, some milk, and some tears (of unspecified emotion).</div>
+						<div className="font-mono pt-10 pl-6 text-md md:text-lg">How I start my day: 3 shots of espresso, some milk, and some tears (of unspecified emotion).</div>
 					</div>
 					<div className={`fade-in-text ${line4Complete ? 'show' : ''}`}>
-						<div className="font-mono text-xl pt-10 pl-6">Please do not ask me to CAD or code anything stupid, because I
+						<div className="font-mono spt-10 pl-6 text-md md:text-lg">Please do not ask me to CAD or code anything stupid, because I
               <span className='italic'> will </span> do it. Wrong requests only.</div>
 					</div>
 					<div className={`fade-in-text ${showNewText ? 'show' : ''}`}>
-						<div className="font-mono text-base left pt-10 pl-6">My Resume:</div>
+						<div className="font-mono text-sm left pt-10 pl-6 md:text-base">My Resume:</div>
 						<div className="pl-8">
 								<button className="bg-white hover:bg-pinkycandy font-mono font-bold py-2 px-4 rounded inline-flex items-center">
 									<svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>

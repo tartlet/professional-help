@@ -11,6 +11,13 @@ module.exports = {
       'themegrey': '#e8d8d8',
       'darktext': '#786b6b'
     },
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {},
   },
   plugins: [],
