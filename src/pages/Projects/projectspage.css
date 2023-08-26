@@ -22,7 +22,7 @@
 }
 
 .animate-fade-in {
-    animation: fadeIn 2s ease-in-out; /* Adjust the duration as needed */
+    animation: fadeIn 1.5s ease-in-out; /* Adjust the duration as needed */
 }
   
   /* Hide elements with opacity 0 */

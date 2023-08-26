@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="font-mono p-5 flex flex-row bg-barpink">
-        <div className="basis-1/3 flex space-x-4 mr-8">
+        <div className="basis-1/4 flex space-x-4 mr-8">
           <div>
             <MenuButton width="20" height="20"/>
           </div>

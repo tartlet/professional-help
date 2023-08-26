@@ -35,7 +35,7 @@ const ProjectsPage = () => {
   return (
     <div> 
       {isLoaded ? (
-      <div className="grid items-stretch grid-cols-3 show-card font-mono">
+      <div className="grid items-stretch grid-cols-3 font-mono">
       {projectData.map((project, index) => (
         <div className="p-2" key={index+1}>
           <ProjectCard
@@ -44,7 +44,7 @@ const ProjectsPage = () => {
             onClick={() => {setSelectedCard(project.node);
                             console.log(index +1);
                             openModal();}}
-            initialDelay={(index+1) * 100} // Add a delay based on the index of the card
+            initialDelay={(index+1) * 200} // Add a delay based on the index of the card
           />
         </div>
       ))}

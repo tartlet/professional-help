@@ -24,12 +24,12 @@ const BlogPostCard = ({post}) => {
 				{post.preview}
 			</div>
 			<div className='flex'>
-				<div className="w-1/2 px-4 text- shadow-sm ml-4 mb-4 rounded-lg">
+				<div className="w-1/2 px-4 text-xs shadow-sm ml-4 mb-4 rounded-lg content-center">
 					<div className='flex'>
 						<div>
-							<img src={post.author.photo.url} alt="dummy" className="object-center w-12 h-12 rounded-full object-cover"/>
+							<img src={post.author.photo.url} alt="dummy" className="object-center w-12 h-12 rounded-full object-cover my-2"/>
 						</div>
-						<div className="ml-4 my-4">
+						<div className="ml-4 my-6">
 							Created by: {post.author.name}
 						</div>
 					</div>

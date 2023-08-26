@@ -38,7 +38,7 @@ const HomePage = () => {
           <div className="text-center mb-4">
             This website was created with	&#x1F49F; using:
           </div>
-          <div className="grid gap-4 grid-cols-3 text-sm w-[380px] m-auto">
+          <div className="grid gap-4 grid-cols-3 text-sm w-[380px] mx-auto mb-[50px]">
             <div className="border-[1px] border-borderpink h-28 w-28 rounded-lg p-2 text-center">
               React.js
               <a href="https://react.dev/" target="_blank">

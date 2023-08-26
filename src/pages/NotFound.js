@@ -1,8 +1,13 @@
+import NotFoundImage from "./../assets/notfound.png";
+
 const NotFound = () => {
     return (
         <div>
             <div className="">
-                404 art here
+                <img src={NotFoundImage} className="object-contain h-[500px] w-[1000px] mt-10"/>
+                <div className="font-bold text-2xl text-center mx-6">
+                    Uh oh... seems like you've reached a page that doesn't exist!
+                </div>
             </div>
         </div>
     );

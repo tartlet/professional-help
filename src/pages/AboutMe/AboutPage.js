@@ -102,7 +102,7 @@ return (
 						<div className="font-mono pt-10 pl-6 text-md md:text-lg">How I start my day: 3 shots of espresso, some milk, and some tears (of unspecified emotion).</div>
 					</div>
 					<div className={`fade-in-text ${line4Complete ? 'show' : ''}`}>
-						<div className="font-mono spt-10 pl-6 text-md md:text-lg">Please do not ask me to CAD or code anything stupid, because I
+						<div className="font-mono pt-10 pl-6 text-md md:text-lg">Please do not ask me to CAD or code anything stupid, because I
               <span className='italic'> will </span> do it. Wrong requests only.</div>
 					</div>
 					<div className={`fade-in-text ${showNewText ? 'show' : ''}`}>

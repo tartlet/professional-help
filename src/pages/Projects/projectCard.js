@@ -5,8 +5,8 @@ import "./projectspage.css"
 
 const ProjectCard = ({ index, project, onClick }) => {
   const [catImage, setCatImage] = useState("");
-  const isImageLoaded = useFadeIn(); // Control the fade-in animation with useFadeIn hook
-  const [isImageLoadedState, setIsImageLoaded] = useState(false); // State to track image loading
+  // const isImageLoaded = useFadeIn(); // Control the fade-in animation with useFadeIn hook
+  const [isImageLoaded, setIsImageLoaded] = useState(false); // State to track image loading
 
   useEffect(() => {
     fetch("https://cataas.com/cat?width=400&height=300")
@@ -33,7 +33,7 @@ const ProjectCard = ({ index, project, onClick }) => {
     >
       {catImage && ( // Only render when the image is loaded
         <>
-          <div className={`container w-200 ${isImageLoaded ? "opacity-100" : "opacity-0"}`}>
+          <div className={`container w-200`}>
             <img
               className="w-full"
               src={catImage}
