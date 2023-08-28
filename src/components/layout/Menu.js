@@ -6,7 +6,10 @@ export default MenuBox = () => {
     toggleMenu = () => {
         setIsVisible(true);
     }
+    
     return (
-
+        <div className="fixed">
+            meow
+        </div>
     );
 };

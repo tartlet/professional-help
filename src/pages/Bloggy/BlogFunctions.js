@@ -22,6 +22,9 @@ export const getPosts = async () => {
             preview
             title
             slug
+            postPhoto {
+              url
+            }
           }
         }
       }

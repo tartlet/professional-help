@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import {ReactComponent as MenuButton} from './../../assets/menu_button.svg';
 
 const Navbar = () => {
+
   return (
     <nav>
       <div className="font-mono p-5 flex flex-row bg-barpink">

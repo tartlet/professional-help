@@ -3,6 +3,7 @@ import { getPostDetail } from "./BlogFunctions";
 import { useState, useEffect } from "react";
 import parse from 'html-react-parser';
 import { Link } from "react-router-dom";
+import "./BlogStuff.css";
 
 const BlogPostPage = () => {
   const [postDetail, setPostDetail] = useState([]);
@@ -15,10 +16,10 @@ const BlogPostPage = () => {
     const fetchPostDetail = async () => {
       const postDetail = await getPostDetail(post_slug);
       console.log(postDetail)
-      setIsLoaded(true);
       setPostDetail(postDetail);
       const date = new Date(postDetail.createdAt);
       setPostDate(date);
+      setIsLoaded(true);
     }
     fetchPostDetail()
       .catch(console.log("error getting Post Detail"));
@@ -36,11 +37,13 @@ const BlogPostPage = () => {
               <div className="text-xs">
                 Tags: 
               </div>
+              <div className="ml-[2px] flex flex-row">
               {(postDetail.categories).map((category, index) => (
                 <div key='{index}' className="text-[8px] border-[1px] border-borderpink rounded-full p-1">
                   {category.categoryName}
                 </div>
               ))}
+              </div>
             </div>
             <div className="text-xs mt-4 mx-6 flex justify-center items-center">
               Created by:
@@ -72,7 +75,7 @@ const BlogPostPage = () => {
                       {category.posts.map((post, index) => {
                         if ((post.slug) !== post_slug) {
                         return (
-                          <Link to="/blog/${post.slug}" state={{slug: post.slug}}>
+                          <Link to={`/blog/${post.slug}`} state={{slug: post.slug}}>
                           <div className="text-sm m-2 border-[1px] hover:drop-shadow-md hover:bg-searchpink border-borderpink rounded-lg p-2">
                             {post.title}
                           </div>

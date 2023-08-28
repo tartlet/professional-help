@@ -16,7 +16,7 @@ function App() {
         <Route path="/aboutme" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/blog" element={<BloggyPage />} />
-        <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/blog/:post_slug" element={<BlogPostPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

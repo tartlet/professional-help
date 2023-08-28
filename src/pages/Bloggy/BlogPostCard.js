@@ -12,13 +12,13 @@ const BlogPostCard = ({post}) => {
 	// 	+ Date(post.createdAt).split(' ')[3]
 
 	return (
-		<Link to="/blog/${post.slug}" state={{slug: post.slug}}>
+		<Link to={`/blog/${post.slug}`} state={{slug: post.slug}}>
 		<div className="font-mono mx-auto border-borderpink border-2 mb-2 rounded-lg shadow-md hover:shadow-xl">
 			<div className="font-semibold text-xl mt-2 ml-2 mb-4">
 				{post.title}
 			</div>
 			<div className="relative overflow-hidden shadow-md pb-80 mb-4">
-				<img src={post.author.photo.url} alt="dummy" className="object-top absolute h-80 w-full object-cover rounded-lg"/>
+				<img src={post.postPhoto.url} alt="dummy" className="object-top absolute h-80 w-full object-cover rounded-lg"/>
 			</div>
 			<div className="px-4 mb-4">
 				{post.preview}
