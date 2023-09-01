@@ -3,25 +3,22 @@ import { ReactComponent as MoreIcon } from './../../assets/catarrow.svg';
 import useFadeIn from "./useFadeIn";
 import "./projectspage.css"
 
-const ProjectCard = ({ index, project, onClick, initialDelay = 0 }) => {
+const ProjectCard = ({ index, project, onClick }) => {
   const [catImage, setCatImage] = useState("");
   // const isImageLoaded = useFadeIn(); // Control the fade-in animation with useFadeIn hook
   const [isImageLoaded, setIsImageLoaded] = useState(false); // State to track image loading
 
   useEffect(() => {
-    // fetch("https://cataas.com/cat?width=400&height=300")
-    //   .then((response) => response.blob())
-    //   .then((blob) => {
-    //     const imageUrl = URL.createObjectURL(blob);
-    //     setCatImage(imageUrl);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error fetching cat image:", error);
-    //     setCatImage("./meow.jpeg")
-    //   });
-    setTimeout(()=> {
-      setCatImage(project.cardImage.url)
-    }, initialDelay);
+    fetch("https://cataas.com/cat?width=400&height=300")
+      .then((response) => response.blob())
+      .then((blob) => {
+        const imageUrl = URL.createObjectURL(blob);
+        setCatImage(imageUrl);
+      })
+      .catch((error) => {
+        console.error("Error fetching cat image:", error);
+        setCatImage("./meow.jpeg")
+      });
   }, []);
 
   const handleImageLoad = () => {
@@ -38,7 +35,7 @@ const ProjectCard = ({ index, project, onClick, initialDelay = 0 }) => {
         <>
           <div className={`container w-200`}>
             <img
-              className="w-full h-[200px] object-center object-cover"
+              className="w-full"
               src={catImage}
               alt="Sunset in the mountains"
               onLoad={handleImageLoad} // Call handleImageLoad when the image is loaded

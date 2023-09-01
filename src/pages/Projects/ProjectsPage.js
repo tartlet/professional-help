@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
 import { getProjects } from './GetProjects';
 import parse from 'html-react-parser';
+import Loading from "./../../assets/loading.gif";
 
 const ProjectsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +36,7 @@ const ProjectsPage = () => {
   return (
     <div> 
       {isLoaded ? (
-      <div className="grid items-stretch grid-cols-3 font-mono">
+      <div className="grid items-stretch grid-cols-3 font-sans">
       {projectData.map((project, index) => (
         <div className="p-2" key={index+1}>
           <ProjectCard
@@ -52,7 +53,7 @@ const ProjectsPage = () => {
         <ReactModal 
           isOpen={isOpen} 
           onRequestClose={handleRequestCloseFunction}>
-            <div className="font-mono">
+            <div className="font-sans">
               <p className="text-xl">{selectedCard.title}</p>
               <br />
               <p className="text-base">{parse(selectedCard.projectDescription.html)}</p>
@@ -61,7 +62,9 @@ const ProjectsPage = () => {
       </div>
     </div>
     ) : (
-      <p>LOADING</p>
+      <div className='grid h-[100px] place-items-center'>
+        <img src={Loading}/>
+      </div>
     )}
     </div>
 

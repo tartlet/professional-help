@@ -18,6 +18,10 @@ export const getProjects = async() => {
             categories {
               name
             }
+            cardImage {
+              url
+            }
+            order
           }
         }
       }
@@ -25,5 +29,9 @@ export const getProjects = async() => {
   `
   const result = await request(endpoint, query);
   console.log(result);
-  return result.projectsConnection.edges;
+  var post_array = result.projectsConnection.edges;
+  post_array.sort(function(a,b) {
+    return new  Date(a.node.order) - new Date(b.node.order)
+  })
+  return post_array;
 }
