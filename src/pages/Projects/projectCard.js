@@ -36,7 +36,7 @@ const ProjectCard = ({ index, project, onClick, initialDelay = 0 }) => {
     >
       {catImage && ( // Only render when the image is loaded
         <>
-          <div className={`container w-200`}>
+          <div>
             <img
               className="w-full h-[200px] object-center object-cover"
               src={catImage}
@@ -55,12 +55,23 @@ const ProjectCard = ({ index, project, onClick, initialDelay = 0 }) => {
             </div>
             <p className="text-sm h-[40%] overflow-auto">{project.blurb}</p>
           </div>
+          <div className="flex flex-row justify-between">
           <button 
 						className={`bg-searchpink hover:bg-barpink relative space-x-2 font-bold m-2 py-2 px-4 rounded border-[1px] inline-flex items-center ${isImageLoaded ? "opacity-100" : "opacity-0"}`} 
 						onClick={onClick}>
             
             <span>More</span>
           </button>
+          {project.linktoProject ? (
+          <div className="mr-4 mt-6 underline text-darkfont">
+            <a href={project.linktoProject} target="_blank"> Link </a>
+          </div>
+          ) : (
+            <div className="mr-4 mt-6 text-darkfont">
+            Classified!
+            </div>
+          )}
+          </div>
         </>
       )}
     </div>

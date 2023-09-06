@@ -2,8 +2,8 @@ import "./slider.css";
 
 const SillyToggle = ({isToggled, onToggle}) => {
   return (
-    <div className="flex flex-row">
-    <div className="font-normal text-xs text-center">
+    <div className="flex flex-row items-center">
+    <div className="font-normal text-xs text-center pr-2">
       silly mode
     </div>
     <div className="toggle">

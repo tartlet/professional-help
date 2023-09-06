@@ -22,6 +22,7 @@ export const getProjects = async() => {
               url
             }
             order
+            linktoProject
           }
         }
       }

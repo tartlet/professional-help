@@ -9,7 +9,8 @@ module.exports = {
       'white': '#ffffff',
       'borderpink': '#d6aeae',
       'themegrey': '#e8d8d8',
-      'darktext': '#786b6b'
+      'darktext': '#786b6b',
+      'darkfont': '#a88888'
     },
     screens: {
       'sm': '640px',
