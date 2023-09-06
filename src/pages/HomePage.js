@@ -36,7 +36,7 @@ const HomePage = () => {
         <div className='flex'>
           <img src="https://media.tenor.com/I6ey27w6fpcAAAAC/let-him-cook.gif" alt="gif of a guy burning himself tossing veggies into a pan" className="mx-auto object-cover" />
         </div> */}
-        <div className='mt-10 text-center font-sans text-2xl'>
+        <div className='mt-10 text-center font-sans text-2xl mx-2'>
           Jingsi's Portfolio + Future Project Hub :)
         </div>
         <div className="object-center mt-10">
