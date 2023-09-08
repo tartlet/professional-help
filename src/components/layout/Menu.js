@@ -19,7 +19,7 @@ const Sidebar = () => {
       )}
 
       <div
-        className={`top-0 -left-[18rem] w-[35vw] bg-pinkycandy p-10 pr-6 text-black fixed h-full z-20 ease-in-out duration-300 ${
+        className={`top-0 -left-[33%] w-[30%] pl-12 pt-10 bg-pinkycandy text-black fixed h-full z-20 ease-in-out duration-300 ${
           showSidebar ? "translate-x-full " : "translate-x-0"
         }`}
       >
