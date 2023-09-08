@@ -6,6 +6,7 @@ import BloggyPage from './pages/Bloggy/BloggyPage';
 import Layout from './components/layout/Layout';
 import BlogPostPage from './pages/Bloggy/BlogPostPage';
 import NotFound from './pages/NotFound';
+import HbdDoggy from './pages/Fun Stuff/HbdDoggy';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/blog" element={<BloggyPage />} />
         <Route path="/blog/:post_slug" element={<BlogPostPage />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/hbd_doggy" element={<HbdDoggy />} />
       </Routes>
     </Layout>
   );

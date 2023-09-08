@@ -8,7 +8,7 @@ const Sidebar = () => {
     <>
       {showSidebar ? (
         <button
-          className="flex text-base text-black cursor-pointer absolute mb-1 mr-2 z-50"
+          className="flex text-base text-black cursor-pointer absolute mb-1 -ml-2 z-50"
           onClick={() => setShowSidebar(!showSidebar)}
         >
           x
@@ -19,13 +19,16 @@ const Sidebar = () => {
       )}
 
       <div
-        className={`top-0 -left-[18rem] w-[35vw] bg-pinkycandy p-10 pr-20 text-black fixed h-full z-20 ease-in-out duration-300 ${
+        className={`top-0 -left-[18rem] w-[35vw] bg-pinkycandy p-10 pr-6 text-black fixed h-full z-20 ease-in-out duration-300 ${
           showSidebar ? "translate-x-full " : "translate-x-0"
         }`}
       >
-        <h3 className="mt-20 text-4xl font-semibold text-darktext">
-          I am a sidebar
-        </h3>
+        <div className="mt-6 text-2xl font-semibold text-darktext">
+          Other Fun Stuff!
+        </div>
+        <div className="mt-4">
+          Coming soon... 
+        </div>
       </div>
     </>
   );

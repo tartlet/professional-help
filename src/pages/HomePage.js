@@ -39,6 +39,9 @@ const HomePage = () => {
         <div className='mt-10 text-center font-sans text-2xl mx-2'>
           Jingsi's Portfolio + Future Project Hub :)
         </div>
+        <div className='text-center mx-10'>
+          (meant to be viewed on a computer screen, will make it more mobile friendly!)
+        </div>
         <div className="object-center mt-10">
           <div className="text-center mb-4">
             This website was created with	&#x1F49F; using:
