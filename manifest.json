@@ -1,6 +1,6 @@
 {
-  "short_name": "Jingsi's Portfolio",
-  "name": "Jingsi's Portfolio and Future Project Hub",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
