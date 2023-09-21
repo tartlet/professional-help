@@ -32,7 +32,7 @@ const TypingComponent = ({ onAnimationComplete }) => {
     }
   }, [onAnimationComplete]);
 
-  return <div className="font-mono text-3xl pt-10 pl-6" ref={typingRef}></div>;
+  return <div className="text-xl pt-10 pl-6" ref={typingRef}></div>;
 };
 
 export default TypingComponent;

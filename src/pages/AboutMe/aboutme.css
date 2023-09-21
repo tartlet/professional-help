@@ -23,7 +23,7 @@
 .fade-in-image.show { 
 	/* transition: transform 1s ease; */
 	animation: fadeIn 2s;
-	flex-basis: 30%;
+	flex-basis: 33%;
 	transition: all 1s ease;
 }
 
